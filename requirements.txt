@@ -3,3 +3,4 @@ opencv-contrib-python
 dlib
 face_recognition
 imutils
+google_images_download
