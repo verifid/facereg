@@ -13,3 +13,7 @@ __version__      = '0.1'
 __url__          = 'https://github.com/verifid/facereg'
 __download_url__ = 'https://github.com/verifid/facereg'
 __description__  = 'Face recognition from identity cards with OpenCV and Deep Learning.'
+
+from facereg import (
+    google_images
+)
