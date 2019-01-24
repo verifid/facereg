@@ -3,11 +3,15 @@
 
 import unittest
 import pytest
+import os
 
 from facereg import face_encoder
 
 class FaceEncoderTest(unittest.TestCase):
     
     def test_encode_faces(self):
-        image_paths = face_encoder.encode_faces()
-        self.assertEqual(len(image_paths), 3)
+        pickle_cached_stamp = 0
+        face_encoder.encode_faces()
+        pickle_encoding_path = face_encoder.encodings_path
+        stamp = os.stat(pickle_encoding_path).st_mtime
+        self.assertNotEqual(pickle_cached_stamp, stamp)
