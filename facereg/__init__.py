@@ -16,5 +16,6 @@ __description__  = 'Face recognition from identity cards with OpenCV and Deep Le
 
 from facereg import (
     google_images,
-    face_encoder
+    face_encoder,
+    recognize_faces
 )
