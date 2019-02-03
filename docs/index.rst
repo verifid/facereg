@@ -1,16 +1,18 @@
 .. facereg documentation master file, created by
-   sphinx-quickstart on Sun Feb  3 11:22:27 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+
+Contents:
 
 Welcome to facereg's documentation!
 ===================================
+**facereg** is a module for face recognition with OpenCV and Deep Learning.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
 
-
+   installation.rst
+   google_images.rst
+   face_encoder.rst
+   recognize_faces.rst
 
 Indices and tables
 ==================
