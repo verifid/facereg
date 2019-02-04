@@ -1,0 +1,6 @@
+include COPYING
+include LICENSE
+include NOTICE
+include encodings.pickle
+include *.rst
+prune .DS_Store
