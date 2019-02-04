@@ -15,8 +15,17 @@
 import os
 import sys
 
-sys.path.append(os.path.abspath('../'))
+from unittest.mock import MagicMock
 
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+            return MagicMock()
+
+MOCK_MODULES = ['dlib', 'face_recognition', 'google_images_download']
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+
+sys.path.append(os.path.abspath('../'))
 
 # -- Project information -----------------------------------------------------
 
@@ -171,3 +180,16 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
+
+# mock dependencies
+# autodoc_mock_imports = ['dlib', 'face_recognition', 'google_images_download']
+
+from unittest.mock import MagicMock
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+        return MagicMock()
+
+MOCK_MODULES = ['dlib', 'face_recognition', 'google_images_download']
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)

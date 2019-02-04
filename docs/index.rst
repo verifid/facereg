@@ -10,9 +10,7 @@ Welcome to facereg's documentation!
    :maxdepth: 1
 
    installation.rst
-   google_images.rst
-   face_encoder.rst
-   recognize_faces.rst
+   facereg.rst
 
 Indices and tables
 ==================
