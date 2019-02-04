@@ -13,3 +13,4 @@ class RecognizeFacesTest(unittest.TestCase):
         image_path = os.path.dirname(os.path.realpath(__file__)) + '/resources/michael_jordan.jpeg'
         names = recognize_faces.recognize(image_path)
         self.assertEqual(len(names), 1)
+        self.assertEqual(names[0], 'michael jordan')
