@@ -82,3 +82,21 @@ Usage
     image_path = 'DIRECTORY PATH OF YOUR_IMAGE'
     names = recognize_faces.recognize(image_path)
     # returns found names from your datasets
+
+CLI Usage
+=========
+
+* Download images
+
+.. code:: python
+
+    # -d: keyword, -l: limit
+    python -m facereg -d 'michael jordan'
+    python -m facereg -d 'michael jordan' -l 5
+
+* Recognition
+
+.. code:: python
+
+    # -i: Directory path for image
+    python -m facereg -i tests/resources/michael_jordan.jpeg
