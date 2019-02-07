@@ -1,0 +1,4 @@
+[paths]
+source = facereg/
+[run]
+omit = facereg/__main__.py
