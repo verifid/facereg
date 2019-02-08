@@ -46,8 +46,6 @@ Installation
     $ python setup.py build
     $ python setup.py install
 
-.. |image_layers| image:: https://raw.githubusercontent.com/verifid/facereg/master/resources/layers.png
-
 Usage
 =====
 
@@ -88,15 +86,23 @@ CLI Usage
 
 * Download images
 
-.. code:: python
+.. code::
 
     # -d: keyword, -l: limit
-    python -m facereg -d 'michael jordan'
-    python -m facereg -d 'michael jordan' -l 5
+    $ python -m facereg -d 'michael jordan'
+    $ python -m facereg -d 'michael jordan' -l 5
 
 * Recognition
 
-.. code:: python
+.. code::
 
     # -i: Directory path for image
-    python -m facereg -i tests/resources/michael_jordan.jpeg
+    $ python -m facereg -i tests/resources/michael_jordan.jpeg
+
+Sample Result
+=============
+
+|image_sample|
+
+.. |image_layers| image:: https://raw.githubusercontent.com/verifid/facereg/master/resources/layers.png
+.. |image_sample| image:: https://raw.githubusercontent.com/verifid/facereg/master/resources/mj&sp.png
