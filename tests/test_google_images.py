@@ -12,5 +12,6 @@ class DownloadGoogleImagesTest(unittest.TestCase):
     def test_download_images(self):
         output_directory = os.getcwd() + '/datasets'
         image_paths, output_directory = google_images.download('michael jordan', limit=3)
-        self.assertEqual(len(image_paths['michael jordan']), 3)
+        print(image_paths)
+        self.assertEqual(len(image_paths.get('michael jordan')), 3)
         self.assertEqual(output_directory, output_directory)
