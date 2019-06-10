@@ -57,7 +57,7 @@ Usage
     from facereg import google_images
 
     output_directory = os.getcwd() + '/datasets' # directory path where you want to save photos
-    image_paths, output_directory = google_images.download('michael jordan', limit=3)
+    image_paths = google_images.download('michael jordan', limit=3)
 
 * ``face_encoder``:
 
