@@ -8,10 +8,11 @@ import cv2
 
 from facereg import face_encoder
 
+datasets_path = os.getcwd() + '/datasets'
 encodings_path = os.path.abspath('facereg/encodings.pickle')
 detection_method = 'cnn'
 
-def recognize(image):
+def recognize(image, datasets=datasets_path):
     """Recognize face from given image path.
     Args:
       image (str):
@@ -22,7 +23,7 @@ def recognize(image):
     """
 
     # encode faces
-    face_encoder.encode_faces(encodings=encodings_path, detection_method=detection_method)
+    face_encoder.encode_faces(datasets=datasets_path, encodings=encodings_path, detection_method=detection_method)
     # load the known faces and embeddings
     print('[INFO] loading encodings...')
     with open(encodings_path, 'rb') as handle:
