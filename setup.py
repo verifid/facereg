@@ -24,6 +24,12 @@ def extract_metaitem(meta):
         return meta_match.group(1)
     raise RuntimeError('Unable to find __{meta}__ string.'.format(meta=meta))
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
+with open('requirements.testing.txt') as f:
+    requirements_testing = f.read().splitlines()
+
 setup(
     name='facereg',
     version=extract_metaitem('version'),
@@ -39,9 +45,9 @@ setup(
     packages=find_packages(exclude=('tests', 'docs')),
     include_package_data=True,
     platforms=['Any'],
-    install_requires=['opencv-python', 'opencv-contrib-python', 'dlib', 'face_recognition', 'imutils', 'google_images_download'],
+    install_requires=requirements,
     setup_requires=['pytest-runner'],
-    tests_require=['pytest', 'pytest-cov', 'pytest-runner', 'codecov', 'tox', 'tox-pyenv'],
+    tests_require=requirements_testing,
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4',
     keywords='deep learning, face recognition, face, opencv',
     classifiers=[
