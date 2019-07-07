@@ -20,7 +20,7 @@ which downloads images from Google for you with given keywords to create dataset
 
 Uses two different technics **CNN** and **HoG** for recognition based on `dlib <http://dlib.net/>`_'s
 face recognition system with using `face_recognition <https://github.com/ageitgey/face_recognition>`_.
-**facereg** is totally three different layers and only recognizer has connection on encoder.
+**facereg** has totally three different layers and only recognizer has connection on encoder.
 
 |image_layers|
 
