@@ -12,11 +12,20 @@ datasets_path = os.getcwd() + '/datasets'
 encodings_path = os.path.abspath('facereg/encodings.pickle')
 detection_method = 'cnn'
 
-def recognize(image, datasets=datasets_path):
+def recognize(image,
+              datasets=datasets_path,
+              encodings=encodings_path,
+              detection_method=detection_method):
     """Recognize face from given image path.
     Args:
       image (str):
         Image path from file system.
+      datasets (str):
+        Datasets path from file system.
+      encodings (str):
+        Encodings path from file system.
+      detection_method (str):
+        Face detection method. Options: `cnn` or `hog`.
     Returns:
       names (list):
         List of names.
