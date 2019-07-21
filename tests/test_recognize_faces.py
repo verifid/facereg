@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-import pytest
 import os
 
 from facereg import recognize_faces
