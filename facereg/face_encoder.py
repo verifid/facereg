@@ -11,7 +11,9 @@ from imutils import paths
 datasets_path = os.getcwd() + '/datasets'
 encodings_path = os.path.dirname(os.path.realpath(__file__)) + '/encodings.pickle'
 
-def encode_faces(datasets=datasets_path, encodings=encodings_path, detection_method='cnn'):
+def encode_faces(datasets=datasets_path,
+                 encodings=encodings_path,
+                 detection_method='cnn'):
     """Encodes (128-d vectors) given images on datasets.
     Args:
       datasets (str):

@@ -32,10 +32,10 @@ def recognize(image,
     """
 
     # encode faces
-    face_encoder.encode_faces(datasets=datasets_path, encodings=encodings_path, detection_method=detection_method)
+    face_encoder.encode_faces(datasets=datasets, encodings=encodings, detection_method=detection_method)
     # load the known faces and embeddings
     print('[INFO] loading encodings...')
-    with open(encodings_path, 'rb') as handle:
+    with open(encodings, 'rb') as handle:
         data = pickle.load(handle)
     # load the input image and convert it from BGR to RGB
     image = cv2.imread(image)
@@ -49,8 +49,7 @@ def recognize(image,
     # facial embeddings
     for encoding in encodings:
         # compare input image to our known encodings
-        matches = face_recognition.compare_faces(data['encodings'],
-            encoding)
+        matches = face_recognition.compare_faces(data['encodings'], encoding)
         name = 'Unknown'
 
         if True in matches:

@@ -7,7 +7,10 @@ from google_images_download import google_images_download
 
 output_directory = os.getcwd() + '/datasets'
 
-def download(keywords, type='face', limit=20, output_directory=output_directory):
+def download(keywords,
+             type='face',
+             limit=20,
+             output_directory=output_directory):
     """Download images from Google with given parameters.
     Args:
       keywords (str):
@@ -25,6 +28,7 @@ def download(keywords, type='face', limit=20, output_directory=output_directory)
 
     downloader = google_images_download.googleimagesdownload()
     arguments = {'keywords': keywords, 'limit': limit, 
-                 'output_directory': output_directory, 'print_urls': True}
+                 'output_directory': output_directory, 'print_urls': True,
+                 'type': type}
     paths, errors = downloader.download(arguments)
     return paths, errors
