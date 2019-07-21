@@ -27,6 +27,7 @@ face recognition system with using `face_recognition <https://github.com/ageitge
 Prerequisites
 =============
 
+* `CMake <https://cmake.org>`_
 * All dependencies are listed on ``requirements.txt`` and will be installed when you install with **pip**.
 
 Installation
