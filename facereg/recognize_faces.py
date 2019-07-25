@@ -31,6 +31,9 @@ def recognize(image,
         List of names.
     """
 
+    if not os.path.isfile(image):
+        print('No image found on given image path!')
+        return []
     # encode faces
     face_encoder.encode_faces(datasets=datasets, encodings=encodings, detection_method=detection_method)
     # load the known faces and embeddings
