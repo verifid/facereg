@@ -32,19 +32,19 @@ def recognize(image,
     """
 
     if not os.path.isfile(image):
-        print('recognize_faces:recognize No image found on given image path!')
+        print('[recognize_faces:recognize] no image found on given image path!')
         return []
     # encode faces
     face_encoder.encode_faces(datasets=datasets, encodings=encodings, detection_method=detection_method)
     # load the known faces and embeddings
-    print('recognize_faces:recognize loading encodings...')
+    print('[recognize_faces:recognize] loading encodings...')
     with open(encodings, 'rb') as handle:
         data = pickle.load(handle)
     # load the input image and convert it from BGR to RGB
     image = cv2.imread(image)
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     # bounding boxes corresponding to each face in the input image
-    print('recognize_faces:recognize recognizing faces...')
+    print('[recognize_faces:recognize] recognizing faces...')
     boxes = face_recognition.face_locations(rgb, model=detection_method)
     encodings = face_recognition.face_encodings(rgb, boxes)
     # initialize the list of names for each face detected
