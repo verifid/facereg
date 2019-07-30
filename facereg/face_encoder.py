@@ -27,8 +27,9 @@ def encode_faces(datasets=datasets_path,
     known_encodings = []
     known_names = []
     image_paths = list(paths.list_images(datasets))
+
     for (i, imagePath) in enumerate(image_paths):
-        print("[INFO] processing image {}/{}".format(i + 1, len(image_paths)))
+        print('face_encoder:encode_faces processing image {}/{}'.format(i + 1, len(image_paths)))
         name = imagePath.split(os.path.sep)[-2]
         image = cv2.imread(imagePath)
         rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -41,7 +42,7 @@ def encode_faces(datasets=datasets_path,
             known_encodings.append(face_encode)
             known_names.append(name)
     # save facial encodings and names to disk
-    print("[INFO] serializing encodings...")
+    print('face_encoder:encode_faces serializing encodings...')
     data = {"encodings": known_encodings, "names": known_names}
     f = open(encodings, "wb")
     f.write(pickle.dumps(data))
