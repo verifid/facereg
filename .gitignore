@@ -105,3 +105,6 @@ venv.bak/
 
 # intellij
 .idea/
+
+# ignore resized test image
+/tests/resources/resized_image.jpeg

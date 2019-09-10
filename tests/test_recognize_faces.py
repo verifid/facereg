@@ -3,13 +3,20 @@
 
 import unittest
 import os
+import imutils
+import cv2
 
 from facereg import recognize_faces
 
 class RecognizeFacesTest(unittest.TestCase):
 
     def test_recognize(self):
-        image_path = os.path.dirname(os.path.realpath(__file__)) + '/resources/michael_jordan.jpeg'
+        file_dir = os.path.dirname(os.path.realpath(__file__))
+        image_path = file_dir + '/resources/michael_jordan.jpeg'
+        image = cv2.imread(image_path)
+        resized = imutils.resize(image, width=100)
+        resized_image_path = file_dir + '/resources/resized_image.jpeg'
+        cv2.imwrite(resized_image_path, resized) 
         names = recognize_faces.recognize(image_path)
         self.assertEqual(len(names), 1)
         self.assertEqual(names[0], 'michael jordan')
