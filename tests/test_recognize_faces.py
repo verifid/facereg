@@ -17,6 +17,7 @@ class RecognizeFacesTest(unittest.TestCase):
         resized = imutils.resize(image, width=100)
         resized_image_path = file_dir + '/resources/resized_image.jpeg'
         cv2.imwrite(resized_image_path, resized) 
-        names = recognize_faces.recognize(image_path)
+        datasets =  os.path.abspath(os.path.join('datasets/michael jordan', os.pardir))
+        names = recognize_faces.recognize(image_path, datasets=datasets)
         self.assertEqual(len(names), 1)
         self.assertEqual(names[0], 'michael jordan')
