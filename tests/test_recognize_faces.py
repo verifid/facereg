@@ -21,3 +21,8 @@ class RecognizeFacesTest(unittest.TestCase):
         names = recognize_faces.recognize(image_path, datasets=datasets)
         self.assertEqual(len(names), 1)
         self.assertEqual(names[0], 'michael jordan')
+
+
+if __name__ == '__main__':
+    recognition_tests = RecognizeFacesTest()
+    recognition_tests.test_recognize()

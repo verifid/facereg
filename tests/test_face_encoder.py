@@ -14,3 +14,8 @@ class FaceEncoderTest(unittest.TestCase):
         pickle_encoding_path = face_encoder.encodings_path
         stamp = os.stat(pickle_encoding_path).st_mtime
         self.assertNotEqual(pickle_cached_stamp, stamp)
+
+
+if __name__ == "__main__":
+    face_encoder_tests = FaceEncoderTest()
+    face_encoder_tests.test_encode_faces()
