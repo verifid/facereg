@@ -8,6 +8,7 @@ import pickle
 
 from imutils import paths
 
+
 datasets_path = os.getcwd() + '/datasets'
 encodings_path = os.path.dirname(os.path.realpath(__file__)) + '/encodings.pickle'
 

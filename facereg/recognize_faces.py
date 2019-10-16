@@ -8,6 +8,7 @@ import cv2
 
 from facereg import face_encoder
 
+
 datasets_path = os.getcwd() + '/datasets'
 encodings_path = os.path.abspath('facereg/encodings.pickle')
 detection_method = 'cnn'
