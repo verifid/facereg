@@ -7,8 +7,8 @@ facereg
 .. image:: https://img.shields.io/pypi/pyversions/facereg.svg
     :target: https://pypi.org/project/facereg
 
-.. image:: https://travis-ci.org/verifid/facereg.svg?branch=master
-    :target: https://travis-ci.org/verifid/facereg
+.. image:: https://github.com/verifid/facereg/workflows/facereg%20ci/badge.svg
+    :target: https://github.com/verifid/facereg/actions
 
 .. image:: https://codecov.io/gh/verifid/facereg/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/verifid/facereg
