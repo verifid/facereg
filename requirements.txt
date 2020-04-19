@@ -1,6 +1,6 @@
-opencv-python
-opencv-contrib-python
-dlib
-face_recognition
-imutils
-google_images_download
+opencv-python >= 4.2.0
+opencv-contrib-python >= 4.2.0
+dlib >= 19.19.0
+face_recognition >= 1.3.0
+imutils >= 0.5.3
+google_images_download >= 2.8.0
