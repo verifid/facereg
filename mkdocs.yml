@@ -1,0 +1,56 @@
+site_name: facereg
+site_description: Python module for face recognition with OpenCV and Deep Learning.
+site_url: https://facereg.verifid.app/
+theme:
+  name: material
+  palette:
+    primary: purple
+    accent: amber
+  favicon: images/favicon.png
+  language: en
+repo_name: verifid/facereg
+repo_url: https://github.com/verifid/facereg
+edit_uri: ''
+nav:
+- facereg: index.md
+- installation.md
+- Module Documentation:
+  - module/face_encoder.md
+  - module/google_images.md
+  - module/recognize_faces.md
+  - module/cli.md
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+      watch:
+        - facereg
+markdown_extensions:
+- toc:
+    permalink: true
+- markdown.extensions.codehilite:
+    guess_lang: false
+- markdown_include.include:
+    base_path: docs
+- admonition
+- codehilite
+- extra
+extra:
+  social:
+  - icon: fontawesome/brands/github-alt
+    link: https://github.com/verifid
+  - icon: fontawesome/brands/linkedin
+    link: https://www.linkedin.com/in/abdullahselek
+  - icon: fontawesome/solid/globe
+    link: https://verifid.app
+extra_css:
+- css/termynal.css
+- css/custom.css
+extra_javascript:
+- https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js
+- js/termynal.js
+- js/custom.js
