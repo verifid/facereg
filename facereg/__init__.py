@@ -14,6 +14,7 @@ __url__          = 'https://github.com/verifid/facereg'
 __download_url__ = 'https://pypi.org/project/facereg'
 __description__  = 'Face recognition from identity cards with OpenCV and Deep Learning.'
 
+
 from facereg import (
     google_images,
     face_encoder,

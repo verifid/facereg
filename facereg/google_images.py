@@ -4,14 +4,15 @@
 import os
 
 from google_images_download import google_images_download
-
+from typing import Tuple, Dict
 
 output_directory = os.getcwd() + '/datasets'
+
 
 def download(keywords,
              type='face',
              limit=20,
-             output_directory=output_directory):
+             output_directory=output_directory) -> Tuple[Dict, str]:
     """Download images from Google with given parameters.
     Args:
       keywords (str):

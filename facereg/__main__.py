@@ -9,6 +9,7 @@ from facereg import (
     recognize_faces
 )
 
+
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='CLI - face recognition from identity cards with OpenCV and Deep Learning.')

@@ -7,16 +7,18 @@ import pickle
 import cv2
 
 from facereg import face_encoder
+from typing import List
 
 
 datasets_path = os.getcwd() + '/datasets'
 encodings_path = os.path.abspath('facereg/encodings.pickle')
 detection_method = 'cnn'
 
+
 def recognize(image,
               datasets=datasets_path,
               encodings=encodings_path,
-              detection_method=detection_method):
+              detection_method=detection_method) -> List:
     """Recognize face from given image path.
     Args:
       image (str):
