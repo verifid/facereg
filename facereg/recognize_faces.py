@@ -10,15 +10,17 @@ from facereg import face_encoder
 from typing import List
 
 
-datasets_path = os.getcwd() + '/datasets'
-encodings_path = os.path.abspath('facereg/encodings.pickle')
-detection_method = 'cnn'
+datasets_path = os.getcwd() + "/datasets"
+encodings_path = os.path.abspath("facereg/encodings.pickle")
+detection_method = "cnn"
 
 
-def recognize(image,
-              datasets=datasets_path,
-              encodings=encodings_path,
-              detection_method=detection_method) -> List:
+def recognize(
+    image,
+    datasets=datasets_path,
+    encodings=encodings_path,
+    detection_method=detection_method,
+) -> List:
     """Recognize face from given image path.
     Args:
       image (str):
@@ -35,19 +37,21 @@ def recognize(image,
     """
 
     if not os.path.isfile(image):
-        print('[recognize_faces:recognize] no image found on given image path!')
+        print("[recognize_faces:recognize] no image found on given image path!")
         return []
     # encode faces
-    face_encoder.encode_faces(datasets=datasets, encodings=encodings, detection_method=detection_method)
+    face_encoder.encode_faces(
+        datasets=datasets, encodings=encodings, detection_method=detection_method
+    )
     # load the known faces and embeddings
-    print('[recognize_faces:recognize] loading encodings...')
-    with open(encodings, 'rb') as handle:
+    print("[recognize_faces:recognize] loading encodings...")
+    with open(encodings, "rb") as handle:
         data = pickle.load(handle)
     # load the input image and convert it from BGR to RGB
     image = cv2.imread(image)
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     # bounding boxes corresponding to each face in the input image
-    print('[recognize_faces:recognize] recognizing faces...')
+    print("[recognize_faces:recognize] recognizing faces...")
     boxes = face_recognition.face_locations(rgb, model=detection_method)
     encodings = face_recognition.face_encodings(rgb, boxes)
     # initialize the list of names for each face detected
@@ -55,8 +59,8 @@ def recognize(image,
     # facial embeddings
     for encoding in encodings:
         # compare input image to our known encodings
-        matches = face_recognition.compare_faces(data['encodings'], encoding)
-        name = 'Unknown'
+        matches = face_recognition.compare_faces(data["encodings"], encoding)
+        name = "Unknown"
 
         if True in matches:
             # matched faces indexes
@@ -64,7 +68,7 @@ def recognize(image,
             counts = {}
             # maintain a count for each recognized face
             for i in matched_idxs:
-                name = data['names'][i]
+                name = data["names"][i]
                 counts[name] = counts.get(name, 0) + 1
 
             # find the name with largest vote

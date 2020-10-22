@@ -6,8 +6,8 @@ import os
 
 from facereg import face_encoder
 
+
 class FaceEncoderTest(unittest.TestCase):
-    
     def test_encode_faces(self):
         pickle_cached_stamp = 0
         face_encoder.encode_faces()
