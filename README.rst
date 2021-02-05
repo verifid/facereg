@@ -13,6 +13,9 @@ facereg
 .. image:: https://codecov.io/gh/verifid/facereg/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/verifid/facereg
 
+.. image:: https://pepy.tech/badge/facereg
+    :target: https://pepy.tech/project/facereg
+
 **facereg** is a module for face recognition with OpenCV and Deep Learning.
 
 For now it can be used for just images. It is easy to use with a handy feature 
